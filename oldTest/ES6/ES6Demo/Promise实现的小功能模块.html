@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let status = 1;
+    let userLogin = (resolve,reject) =>{
+        setTimeout(()=>{
+            if(status == 1){
+                resolve({data:'xxx',msg:'登录成功',token:'zzz'});
+            }else{
+                reject('失败');
+            }
+        },2000)
+    };
+
+    let getUserInfo = (resolve,reject) => {
+        setTimeout(()=>{
+            if (status == 1) {
+                resolve({ data: 'xxx1', msg: '获取信息成功', token: 'zzz1' });
+            } else {
+                reject('失败');
+            }
+        },2000)
+    }
+
+    new Promise(userLogin).then(res=>{
+        console.log('用户登陆成功');
+        return new Promise(getUserInfo);
+    }).then(res=>{
+        console.log(res);
+    })
+    </script>
+</body>
+</html>

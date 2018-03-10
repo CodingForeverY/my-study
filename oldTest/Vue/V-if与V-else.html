@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js/vue.js"></script>
+</head>
+<body>
+    <div id="app9">
+        <div v-if='seen'>
+            <h1>看得见的状态</h1>
+            <span>1111111</span>
+        </div>
+        <div v-else>
+            <h1>看不见的状态</h1>
+            <span>2222222</span>
+        </div>
+    </div>
+</body>
+    <script>
+        new Vue({
+            el: '#app9',
+            data: {
+                seen: false
+            }
+        })
+    
+    </script>
+</html>

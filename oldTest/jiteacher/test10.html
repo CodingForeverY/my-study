@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //继承的发展
+    //原型链虽然方便，但是它会继承一些不必要的属性
+    // Grand.prototype.lastName = "Jack";
+    // function Grand() {
+    //
+    // }
+    // grand = new Grand();
+    //
+    // Father.prototype = grand;
+    // function Father() {
+    //     this.name = "Leijun";
+    // }
+    // father = new Father();
+    //
+    // Son.prototype = father;
+    // function Son() {
+    //
+    // }
+    // son = new Son();
+
+    //比较先进的共享原型链
+    // Father.prototype.name = "Vae";
+    // function Father() {
+    //
+    // }
+    // function Son() {
+    //
+    // }
+    // Son.prototype = Father.prototype;
+    // var son = new Son();
+
+    //上述的共享原形链也存在一定得问题，在修改或添加子类的属性时，父类的值与属性也会被修改或添加
+    //特此可以引入一个中间层F(){}
+    // Father.prototype.name = "Vae";
+    // function Father() {
+    //
+    // }
+    // function Son() {
+    //
+    // }
+    //
+    // function inherit(Target,Orign) {
+    //     function F() {}
+    //     F.prototype = Orign.prototype;
+    //     Target.prototype = new F();
+    // }
+    // inherit(Son,Father);
+    //
+    // var son = new Son();
+    // var father = new Father();
+
+    //利用立即执行函数进行包装
+    // var inherit = (function () {
+    //   var F = function () {};
+    //   return function (Target,Origin) {
+    //       F.prototype = Origin.prototype;
+    //       Target.prototype = new F();
+    //       Target.prototype.constructor = Target;
+    //       Target.prototype.uber = Origin.prototype;
+    //   }
+    // }())
+
+
+    //闭包的私有化变量
+    // function Sun(name,wife) {
+    //     var girlFriend = "xiaoqiang";
+    //     this.name = name;
+    //     this.wife = wife;
+    //
+    //
+    //     this.married = function () {
+    //         this.wife = girlFriend;
+    //     }
+    //
+    // }
+    //
+    // var sun = new Sun("yongbi","xiaotian");
+
+    // function fn() {
+    //     this.a = 0;
+    //     this.b = function() {
+    //         console.log(this.a)
+    //     }
+    // }
+    // fn.prototype = {
+    //     b: function() {
+    //         this.a = 20;
+    //         console.log(this.a);
+    //     },
+    //     c: function() {
+    //         this.a = 30;
+    //         console.log(this.a);
+    //     }
+    // }
+    // var myfn = new fn();
+    // myfn.b();
+    // myfn.c();
+
+    //!!!!!!!!!!!!!!
+    // function fun(n,o) {
+    //     console.log(o)
+    //     return {
+    //         fun:function(m){
+    //             return fun(m,n);
+    //         }
+    //     };
+    // }
+    // var a = fun(0);  a.fun(1);  a.fun(2);  a.fun(3);
+    //
+    // var b = fun(0).fun(1).fun(2).fun(3);
+    //
+    // var c = fun(0).fun(1);  c.fun(2);  c.fun(3);
+
+    //!!!!!!!!!!!!!!!!!
+    // var name = 'World!';
+    // console.log('Hello ' + name);
+    // (function () {
+    //     if (typeof name === 'undefined') {
+    //         var name = 'Jack';
+    //         console.log('Goodbye ' + name);
+    //     } else {
+    //         console.log('Hello ' + name);
+    //     }
+    // })();
+
+    // var name = "world";
+    //
+    // (function(){
+    //     console.log(typeof name === 'undefined');
+    // })()
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

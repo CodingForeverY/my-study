@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //利用立即执行函数，把需要的函数闭包出来，这样可以解决命名冲突的问题
+    // var name = "aaa";
+    //
+    // var init = (function () {
+    //     var name = "bbb";
+    //
+    //     function callName() {
+    //         console.log(name);
+    //     }
+    //
+    //     return function () {
+    //         callName();
+    //     }
+    // }());
+    //
+    // init();
+    
+    //用JS实现Jquery的连续调用函数的功能，明白一个函数执行完后隐式调用的是什么
+    // var yun = {
+    //     eat : function eating() {
+    //         console.log("i am eating");
+    //         return this;
+    //     },
+    //     sleep : function sleeping() {
+    //         console.log("i am sleeping");
+    //         return this;
+    //     }
+    // };
+    //
+    // yun.eat().sleep();
+
+    //利用方括号实现字符串的拼接
+    // var wang = {
+    //     wife1 : {name : "xiaozhao"},
+    //     wife2 : {name : "xiaoqian"},
+    //     wife3 : {name : "xiaosun"},
+    //     wife4 : {name : "xiaoli"},
+    //     sayWife : function (num) {
+    //         return this['wife' + num];
+    //     }
+    // }
+    // console.log(wang.sayWife(2));
+
+
+    //forin循环枚举
+    // var liu = {
+    //     name : "qiang",
+    //     sex : "male",
+    //     height : 150
+    // }
+    // for (var index in liu){
+    //     //console.log(liu.index); 这样写是错误的，在枚举里不能用.
+    //     //console.log(liu['index']);这样写也是错误的，这样会被识别为字符串
+    //     console.log(liu[index]);
+    // }
+
+    //hasOwnProperty的用法，判断是不是自己的方法
+    // var liu = {
+    //     name : "qiang",
+    //     sex : "male",
+    //     height : 150,
+    //     __proto__ :{
+    //         lastName : "wang"
+    //     }
+    // }
+    // for (var index in liu){
+    //     //如果是自己的方法就打印
+    //     if(liu.hasOwnProperty(index)){
+    //         console.log(liu[index]);
+    //     }
+    // }
+
+    console.log(a);
+    var a = 6;
+    b();
+    function b(){
+        console.log("10");
+    }
+    a = 20;
+    console.log(a);
+    b();
+
+</script>
+</body>
+</html>

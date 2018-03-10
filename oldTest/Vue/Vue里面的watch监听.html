@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model='demo'>
+        <p v-if="isSearch">正在搜索中。。。</p>
+        <li v-for="(item,index) in items">{{item}}</li>
+    </div>
+</body>
+    <script>
+        
+        new Vue({
+            el: '#app',
+            data: {
+                demo: '',
+                isSearch: false,
+                items: []
+            },
+            watch: {
+                demo: function (query) {
+                    let that = this;
+                    that.isSearch = true;
+                    setTimeout(function () {
+                        that.items = ['vue', 'angular', 'react'];
+                    },500)
+                }
+            }
+        })
+    </script>
+</html>

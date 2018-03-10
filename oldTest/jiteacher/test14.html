@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //数组常用的方法
+    //1.改变原数组
+    //push,pop,shift,unshift,sort,reserve
+    //splice
+
+    //不改变原数组
+    //concat,join --> split,toString.slice-
+
+    //push   这就是系统的实现数组push的方法
+    //由此可以看出这些原型链上的方法是可以被重写的，因此在编程过程中需要学会重写原型链方法，被自己所用
+    // var arr = [1,2];
+    //
+    // Array.prototype.push = function () {
+    //     for(var i = 0;i < arguments.length;i++){
+    //         this[this.length] = arguments[i];
+    //     }
+    //         return this.length;
+    // }
+
+    //pop是把数组的最后一位剪切出来
+    // var arr = [1,2,3];
+    // var num = arr.pop();
+    // console.log(num); //3
+
+    //unshift是在数组的最前面增加一个数，相反，shift是在最前面减去一个数
+
+    //reserve是把数组的顺序逆转
+
+    //splice是把数组切割成段 共有三个参数 splice(从第几位开始，截取多少的长度，在切口处添加新的数据)
+    //注意splice的强大之处在于他可以往数组里切0位，也就是往里面添加东西，而且他的第三个参数是无限的，是可以任意添加数目的。
+    // splice = function (pos) { //数组里面有负数，就是这样实现负数位的，-1就是倒数第一
+    //     pos += pos > 0 ? 0 : this.length;
+    // }
+
+    //sort是给数组进行排序，是升序排列，但是他是按ASCII码进行排列的，所以存在一些错误，但是官方给我们留了接口
+    // var arr = [2,5,6,7,4,1,0,8];
+    //
+    // arr.sort(function (a,b) {
+    //     return a-b; //升序
+    //     //return b-a; //降序
+    // })
+
+
+
+
+
+
+</script>
+</html>

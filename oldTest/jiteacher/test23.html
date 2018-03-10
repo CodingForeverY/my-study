@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //js异步加载
+    //封装
+
+    function loadScript(url,callback) {//第一个参数是引入的js文件名
+        var script = document.createElement('script');
+        script.type = "text/javascript";
+
+        if(script.readyState){
+            script.onreadystatechange = function () {//IE
+                if(script.readyState == 'complete' || script.readyState == 'loaded'){
+                    callback();
+                }
+            }
+        }else {
+            script.onload = function () {//Safari chrome fireFox opera
+                callback();
+            }
+        }
+        script.src = url; //先绑定事件，在执行函数，这样保证不会在事件发生变化以后再去执行。
+        document.head.appendChild(script);
+    }
+
+
+
+    //执行：
+    loadScript('demo.js',function () {//在这里使用一个函数引用，而不是直接写函数名，就是因为在
+        //执行这一行的时候，目标js代码还没有引入进来，计算机并不知道你的test是什么，所以就会报错。
+        test();
+    })
+
+</script>
+</body>
+</html>

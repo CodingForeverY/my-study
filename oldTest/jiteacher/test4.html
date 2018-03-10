@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*向上*/
+    .triangle_border_up{
+        width:0;
+        height:0;
+        border-width:0 30px 30px 30px;
+        border-style:solid;
+        border-color:transparent transparent #333;/*透明 透明  灰*/
+        margin:40px auto;
+        position:relative;
+    }
+</style>
+<body>
+<div class="triangle_border_up"></div>
+<div>
+
+</div>
+</body>
+
+<script>
+    console.log(typeof (typeof (a)));//返回字符串的undifined
+    var a =123.456789;
+    console.log(a.toFixed(3));
+
+
+    function test(a,b) {
+        console.log(arguments[1]);//取实参的长度以及实参
+        console.log(test.length);//取形参的长度以及形参
+    }
+    test(1,2,3,4);
+
+    //注意，实参与形参存在映射关系，只有相等时才会产生映射，如果形参多于实参，那么多的那个就没用了，不会被存到arguments中
+</script>
+</html>

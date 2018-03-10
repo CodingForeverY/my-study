@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js/vue.js"></script>
+</head>
+<body>
+    <div id="app7">
+        <demo class="f b"></demo>
+    </div>
+</body>
+    <script>
+        Vue.component('demo',{
+            template: `<h2 class='foo bar'>这是组件渲染CSS</h2>`,
+        })
+        
+        new Vue({
+            el: '#app7'
+        })
+    </script>
+</html>

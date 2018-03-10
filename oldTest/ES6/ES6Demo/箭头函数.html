@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //箭头函数
+        // let show = (a,b) =>{
+        //     console.log(a+b);
+        // }
+        // show(1,1);
+
+        //注意的地方:
+        //1.箭头函数在使用时，函数里面的this不在是调用它的人所有，而是在创建这个this对象的人所有
+        //2.箭头函数里面没有arguments,需要用到传入参数的数组时可以用...
+        //箭头函数不能当构造函数
+
+        // let show = {
+        //     name : 'jay',
+        //     time : function(){
+        //         setTimeout(
+        //             () =>{
+        //                 alert(this.name); 
+        //             },2000
+        //         )
+        //     }
+        // }
+
+        // show.time();
+
+
+        let show1 = (...arg) => {
+            console.log(arg);
+        }
+        show1(1,2,3,4,5);
+    
+    </script>
+</body>
+</html>

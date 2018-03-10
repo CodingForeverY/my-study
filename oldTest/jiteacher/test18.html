@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //利用原生的js创建div，并用定时器让div自己运动
+        var div = document.createElement('div');
+
+        document.body.appendChild(div);
+        div.style.width = "100px";
+        div.style.height = "100px";
+        div.style.backgroundColor = "red";
+        div.style.position = "absolute";
+        div.style.left = "0";
+        div.style.top = "0";
+
+        var timer = setInterval(function () {
+            div.style.left = parseInt(div.style.left) + 2 + "px";
+            div.style.top = parseInt(div.style.top) + 2 + "px";
+            if(parseInt(div.style.top) > 200 && parseInt(div.style.left) > 200){
+                clearInterval(timer);
+            }
+
+        },100);
+
+
+    </script>
+</body>
+</html>

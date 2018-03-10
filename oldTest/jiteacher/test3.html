@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //递归实现阶乘
+//    var n = window.prompt('input');
+//    function jieCheng(m) {
+//        if (m == 1){
+//            return m;
+//        }
+//        return m * jieCheng(m-1);
+//    }
+//    var s = jieCheng(n);
+//    document.write(s);
+
+
+    //递归实现裴波那契数列
+    var n = window.prompt('input');
+    function diGui(n) {
+        if(n == 1 || n== 2){
+            return 1;
+        }
+        return diGui(n-1)+diGui(n-2);
+    }
+    var result = diGui(n);
+    document.write(result);
+</script>
+</body>
+</html>

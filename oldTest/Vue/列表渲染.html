@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js/vue.js"></script>
+</head>
+<body>
+    <ul id="app10">
+        <li v-for='item in items'>{{item.message}}</li>
+    </ul>
+
+     <!-- 在 v-for 块中，我们拥有对父作用域属性的完全访问权限。v-for 还支持一个可选的第二个参数为当前项的索引。 -->
+    <ul id="app11">
+        <li v-for='(item,index) in items'>
+            {{parentmessage}}-{{index}}-{{item.message}}
+        </li>
+    </ul>
+
+     <!-- 你也可以用 v-for 通过一个对象的属性来迭代。-->
+
+     <ul id="app12">
+        <li v-for='value in object'>
+             <!-- 你也可以提供第二个的参数为键名,第三个参数为索引 -->
+            {{value}}
+        </li>
+     </ul>
+
+     <!-- 为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，
+     你需要为每项提供一个唯一 key 属性。理想的 key 值是每项都有的且唯一的 id。
+     这个特殊的属性相当于 Vue 1.x 的 track-by ，但它的工作方式类似于一个属性，所以你需要用
+     v-bind 来绑定动态值 (在这里使用简写)： -->
+    <div v-for="item in items" :key="item.id">
+        <!-- 内容 -->
+    </div>
+
+</body>
+    <script>
+        new Vue({
+            el: '#app10',
+            data: {
+                items:[
+                    {message: 'apple'},
+                    {message: 'banana'},
+                    {message: 'pear'}
+                ]
+            }
+        });
+
+        new Vue({
+                el: '#app11',
+                data: {
+                    parentmessage: 'parent',
+                    items: [
+                        { message: 'apple' },
+                        { message: 'banana' },
+                        { message: 'pear' }
+                    ]
+                }
+            })
+
+        new Vue({
+            el: '#app12',
+            data: {
+                object: {
+                    name: 'jay',
+                    age: 23,
+                    city: 'taiwan'
+                }
+            }
+        })
+    </script>
+</html>

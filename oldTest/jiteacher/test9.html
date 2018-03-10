@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+//原型
+//     Test.prototype.name = "祖先";
+//     function Test() {
+//
+//     }
+//     var test = new Test();
+
+    // function Car() {
+    //
+    // }
+    // Car.prototype = {//constructor是系统给的，大妈是我们可以人为更改
+    //     constructor : Person
+    // }
+    // function Person() {
+    //
+    // }
+
+    // Person.prototype.name = "sun";
+    // function Person() {
+    //     //var this = {  但是这个原型是可以被修改的
+    //   // __proto__:Person.prototype
+    // //}
+    // }
+    //
+    // var obj = {
+    //     name:"sunny"
+    // }
+    //
+    // person = new Person();
+
+    // Person.prototype.name = "sunny";
+    //  function Person() {
+    //
+    //  }
+    //
+    //  person = new Person();
+    //
+    //  //Person.prototype.name = "cloudy";
+    // Person.prototype = {//指向了一个新的空间
+    //      name:"cloudy"
+    // }
+
+
+    // Person.prototype.name = "sunny";
+    // function Person() {
+    //
+    // }
+    //
+    // //Person.prototype.name = "cloudy";
+    // Person.prototype = {//位置放在上面还是下面是不一样的
+    //     name:"cloudy"
+    // }
+    //
+    // person = new Person();
+
+    Person.prototype = {
+        toString : function () {
+        return "11";
+    }
+    };
+    function Person() {
+
+    }
+    var person = new Person();
+
+</script>
+</body>
+</html>

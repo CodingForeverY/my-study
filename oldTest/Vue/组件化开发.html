@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-component></my-component>
+        <my-component></my-component>
+    </div>
+</body>
+    <script>
+        let component = {  //注意，template必须要有一个根节点
+                template: `
+            <div>
+            <h3>这是一个组件</h3>
+            <span>hehe{{msg}}</span>
+            </div>
+            `,
+                data: function () {  //注意：data里面必须写一个函数，而且必须用return返回。
+                    // 这是因为在多个组件共用一个方法时为了让各个方法有自己的返回值，而不是一改都改
+                    return {
+                        msg: "123456789"
+                    }
+                }
+            }
+
+        Vue.component('my-component',component);
+        new Vue({
+            el: '#app',
+            comments: {
+                'my-component': component
+            }
+
+        })
+    
+    </script>
+</html>
