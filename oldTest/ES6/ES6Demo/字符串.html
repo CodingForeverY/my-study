@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="uL"></ul>
+    <script>
+        //字符串模板
+        // let name = 'wy';
+        // let job = '码农';
+        
+        // let speak = `我的名字是${name},我的工作是${job}`;
+        // console.log(speak);
+
+        //灵活运用使用字符串模板
+        let oUl = document.getElementById('uL');
+        let news = [
+            {
+                title: "习近平一再邀请身边就坐的老人 再次特别亮相(图)",
+                watch : 3000
+            },
+            {
+                title: "国乒新帅确定！刘国梁接班人霸气亮相(图)",
+                watch: 50
+            },
+            {
+                title: "投行真实现状：入行3年月薪5千 春节后面临失业",
+                watch: 100
+            },
+
+        ];
+
+        for(let i = 0;i < news.length;i++){
+            var li = document.createElement('li');
+            li.innerHTML = `<span>${news[i].title}</span></br>浏览人数：<span>${news[i].watch}<span>`;
+
+            oUl.appendChild(li);
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //类数组：本身是对象，但是可以当做数组一样使用，并且外表上与数组一模一样，实现方法如下
+    // var obj = {
+    //     "0" : 'a',
+    //     "1" : 'b',
+    //     "2" : 'c',
+    //     "length" : 3,
+    //     "push" : Array.prototype.push,
+    //     "splice" : Array.prototype.splice
+    // }
+
+    //工具方法：判断数据类型
+    // function type(target) {
+    //     var template = {
+    //         "[object Array]" : "array",
+    //         "[object Object]" : "object",
+    //         "[object Number]" : "number - object", //包装类
+    //         "[object Boolean]" : "boolean - object",
+    //         "[object String]" : "string - object",
+    //     }
+    //
+    //     if(target === null){
+    //         return "null";
+    //     }
+    //     if(typeof(target) == "object"){
+    //         var str = Object.prototype.toString.call(target);
+    //         return template[str];
+    //     }else {
+    //         return typeof(target);
+    //     }
+    // }
+
+    //数组去重
+    // var arr1 = [1,5,6,4,4,7,1,1,5,6]
+    //
+    // Array.prototype.unique = function () { //因为对象的属性名是不可以重复的，所以把数组的每一位作为对象的属性名
+    //     var temp = {},
+    //         arr = [],
+    //         len = this.length;  //目标数组的长度
+    //     for(var i = 0;i < len;i++){
+    //         if(!temp[this[i]]){
+    //             temp[this[i]] = "abc";
+    //             arr.push(this[i]);
+    //         }
+    //     }
+    //     return arr;
+    // }
+
+    //包装类的实现
+    // var num = 123;
+    // num.abc = 'abc';
+    // // new Number(num).abc = 'abc; ---->delete
+    // //
+    // //new Number(num).abc
+    // console.log(num.abc);
+
+
+    //一旦经历了var的操作，所得出的属性，window，这种属性叫做不可配置的属性
+    //不可配置的属性 delete不掉
+
+    //call与apply的应用，也就是可以利用别人的函数实现自己的方法。用this指向自己的参数
+    // function Person(name,age) {
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    //
+    // function Student(name,age,sex) {  //在这里就是让this指向自己的参数，利用call方法把自己的形参放在后面传进去
+    //     //var this = Object.create(Student.prototype);
+    //     Person.call(this,name,age);
+    //     this.sex = sex;
+    // }
+    //
+    // var student = new Student('wu',18,'male');
+
+    //闭包出去的不一定非要使用return，用对象保存出去也可以
+    // var obj = {};
+    // function a() {
+    //     var e = 456;
+    //     function b() {
+    //         var c = 123;
+    //         console.log(e);
+    //     }
+    //     obj.fun = b;
+    // }
+    //
+    // a();
+
+       function a() {
+           function b() {
+           var bbb = 234;
+               console.log(aaa);
+           }
+           var aaa = 123;
+           return b;
+       }
+
+       var demo = a();
+       demo();
+
+
+</script>
+</html>

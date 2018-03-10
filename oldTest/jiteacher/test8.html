@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    function Person(name,age) {
+//        //var this ={};
+//        this.name = name;
+//        this.age = age;
+//        this.say = function () {
+//            console.log(this.say);
+//        }
+//        return this;
+//    }
+// //
+//    person = new Person("liuqiang",55);
+//    console.log(person);
+
+   //数字或者字符串有原始的与对象之分，原始的不能有属性或者方法，而对象的可以有属性或者方法
+
+    //包装类
+//    var num = 4;
+//    num.len = 3;
+    //中间的隐式过程
+    //new Number(4).len = 3;   系统自动删除
+//    console.log(num.len);
+
+    // var a = "abcd";
+    // a.length = 2;
+    // console.log(a);
+    // console.log(a.length);
+
+
+
+//练习！！！
+    // function employee(name,code) {
+    //     this.name = "wangli";
+    //     this.code = "A001";
+    // }
+    //
+    // emp = new employee("zhangsan","B001");
+    // document.write("姓名："+emp.name+"<br/>");
+    // document.write("编号："+emp.code+"<br/>");
+
+    // function Person(name,age,sex) {
+    //     var a = 0;
+    //     this.name = name;
+    //     this.age = age;
+    //     this.sex = sex;
+    //     function sss() {
+    //         a++;
+    //         document.write(a);
+    //     }
+    //     this.say = sss;
+    // }
+    //
+    // var oPerson = new Person();
+    // oPerson.say();
+    // oPerson.say();
+    // var oPerson1 = new Person();
+    // oPerson1.say();
+
+    // var x = 1;
+    // var y,z = 0;
+    // function add(n) {
+    //     return n = n+1;
+    // }
+    // y = add(x);
+    //
+    // function add(n) {
+    //     return n = n+3;
+    // }
+    // z = add(x);
+    // document.write(x+"<br/>"+y+"<br/>"+z);
+
+    // function test(x,y,z) {//形参与实参是相互映射的关系，两者会相互改变
+    //     // arguments[2] = 10;
+    //     // document.write(z);
+    //     z = 10;
+    //     document.write(arguments[2]);
+    // }
+    // test(1,2,3);
+
+    //作业：写一个函数用于返回一个字符串的字节长度
+    // var num = 0;
+    // function test(str) {
+    //    for (var i = 0;i<str.length;i++){
+    //        if(str.charCodeAt(i)>255){
+    //            num += 2;
+    //        }else {
+    //            num++;
+    //        }
+    //    }
+    //    document.write(num);
+    // }
+    //
+    // var n = window.prompt('input');
+    // test(n);
+
+</script>
+</body>
+</html>

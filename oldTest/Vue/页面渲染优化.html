@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js/vue.js"></script>
+</head>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    
+    </style>
+<body>
+    <!-- 有时候因为网速原因导致页面加载需要一定时间，这时候vue还未加载出来，会出现{{}}的乱码显示状态，vue有一个指令，
+    v-cloak，他在dom渲染之前存在，但是在页面加载出来以后就会消失，所以只要在页面绑定这个指令，并设置他的参数时
+    样式为none，就可以完美的解决这个问题 -->
+    
+    <div id="app">
+        <div v-cloak>
+        <p>
+            {{message}}
+        </p>
+    </div>
+    </div>
+</body>
+    <script>
+        setTimeout(function () {
+            new Vue({
+                el: '#app',
+                data: {
+                    message: '页面已加载'
+                }
+                })
+          },5000)
+        
+    </script>
+</html>

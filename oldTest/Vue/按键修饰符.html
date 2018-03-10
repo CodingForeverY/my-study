@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input v-on:keyup.enter='submit'>
+        <!-- 全部的按键别名：
+        .enter .tab .delete (捕获“删除”和“退格”键) .esc .space .up .down .left .right -->
+
+    </div>
+</body>
+    <script>
+        new Vue({
+            el: '#app',
+            methods: {
+                submit: function(){
+                    alert('输入成功！');
+                }
+            }
+        })
+    </script>
+</html>

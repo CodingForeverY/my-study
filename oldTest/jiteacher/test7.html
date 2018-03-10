@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //立即执行函数,执行完立即被销毁。也叫初始化函数。
+//    (function () {
+//       var a = 123;
+//       var b = 234;
+//       console.log(a+b);
+//    }())
+
+//    var num = (function (a,b,c) {带参数的立即执行函数
+//        return a+b+c;
+//    }(1,2,3))
+//    console.log(num);
+
+    //两种写法
+    //(function(){}());建议第一种
+    //(function(){})();
+    //只有表达式才能被执行符号执行
+    //    function test() {//这是函数声明，加（）不能被执行，执行符号就是（）
+    //        var a = 123;
+    //    }()
+    //    var a = function () {//这是函数表达式。可以被执行，被执行符号执行的函数表达式就相当于立即执行函数。执行完就被销毁了
+    //        console.log("a");
+    //    }()
+
+//    + function test() {//增加一个加号(或者-、！、&&、||)以后变成了函数表达式，他就能被执行了，执行完就不是一个函数了。他的名字就不存在了
+//        console.log("a");
+//    }();
+
+    //综上所述。。。()也是可以将表达式变成函数表达式，所以自然而然，变成了立即执行函数
+    //(function(){}());
+    //(function(){})();
+</script>
+</body>
+</html>

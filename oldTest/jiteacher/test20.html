@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p></p>
+    <b></b>
+    <i></i>
+</div>
+
+<script>
+    //封装一个函数，用于实现往一个元素节点的后面插入一个元素
+    Element.prototype.insertAfter = function (targetNode,afterNode) {
+
+        var beforeNode = targetNode.nextElementSibling;
+        if(beforeNode == null){
+            this.appendChild(targetNode);
+        }else {
+            this.insertBefore(targetNode,beforeNode);
+        }
+
+    }
+</script>
+</body>
+</html>

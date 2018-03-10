@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='vue.js/vue.js'></script>
+</head>
+<body>
+    <div id="app">
+    <div style="width:200px;height:200px;border:1px solid black" v-bind:style='style'>
+
+    </div>
+    <button v-on:click='changeColor'>改变颜色</button>
+    </div>
+    
+</body>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                color: 'yellow'
+            },
+            computed: {
+                style: function () {
+                    return {
+                        backgroundColor: this.color
+                    }
+                  }
+            },
+            methods: {
+                changeColor: function () {
+                    if(this.color === 'yellow'){
+                        this.color = 'red';
+                    }else{
+                        this.color = 'yellow';
+                    }
+                  }
+            }
+        })
+    </script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>这段话被点击了{{counter}}次</p>
+        <button v-on:click='clickText'>点击一下</button>
+    </div>
+
+     <!-- 除了直接绑定到一个方法，也可以在内联 JavaScript 语句中调用方法： -->
+    <div id="app2">
+        <button v-on:click="sayHi('hello')">say hello</button>
+        <button v-on:click="sayHi('world')">say world</button>
+    </div>
+
+</body>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                counter: 0
+            },
+            methods:{
+                clickText: function () {
+                    this.counter += 1;
+                  }
+            }
+        })
+
+        new Vue({
+            el: '#app2',
+            methods: {
+                sayHi: function (hi) {
+                    alert(hi);
+                  }
+            }
+        })
+    </script>
+</html>

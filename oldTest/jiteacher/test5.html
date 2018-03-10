@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    //全局变量就变成window对象，不是全局变量则不会，没有声明的变量也会变成全局变量，存在window里面
+//    function test() {
+//        var m = n = 10;
+//    }
+//    test();
+
+
+    //预编译
+   function fn(a) {
+       console.log(a);
+
+       var a = 123;
+
+       console.log(a);
+
+       function a() {}
+
+       console.log(a);
+
+       var b = function () {}
+
+       console.log(b);
+
+       function d() {}
+   }
+
+   fn(1);
+
+
+//    function test(a,b) {
+//        console.log(a);
+//        c = 0;
+//        var c;
+//        a = 3;
+//        b = 2;
+//        console.log(b);
+//        function b() {
+//        }
+//        function d() {
+//        }
+//        console.log(b);
+//    }
+//    test(1);
+
+
+//    function test(a,b) {
+//        console.log(a);
+//        console.log(b);
+//        var b = 234;
+//        console.log(b);
+//        a = 123;
+//        console.log(a);
+//        function a() {
+//        }
+//        var a;
+//        b = 234;
+//        var b = function () {
+//        }
+//        console.log(a);
+//        console.log(b);
+//    }
+//    test(1);
+
+
+    //最恶心的
+//    console.log(test);
+//    function test(test) {
+//        console.log(test);
+//        var test = 234;
+//        console.log(test);
+//        function test() {
+//        }
+//    }
+//    test(1);
+//    var test = 123;
+
+
+//    global = 100;
+//    function fn() {
+//        console.log(global);
+//        global = 200;
+//        console.log(global);
+//        var global = 300;
+//    }
+//    fn();
+//    var global;
+
+//    function test() {
+//        console.log(b);
+//        if(a){
+//            var b = 100;
+//        }
+//        c = 234;
+//        console.log(c);
+//    }
+//
+//    var a;
+//
+//    test();
+//    a = 10;
+//    console.log(c);
+
+
+//    function test() {
+//        var c = 100;
+//        console.log(c);
+//
+//    }
+//    test();
+//    console.log(window.c);
+
+    //百度笔试题练习
+    //1.
+//    function  bar() {
+//        return foo;
+//        foo = 10;
+//        function foo() {
+//        }
+//        var foo = 11;
+//    }
+//    console.log(bar());
+
+
+    //2.
+//    console.log(bar());
+//    function bar() {
+//        foo = 10;
+//        function foo() {
+//        }
+//        var foo = 11;
+//        return foo;
+//    }
+
+
+    //加强练习
+//    a = 100;
+//    function demo(e) {
+//        function e() {
+//        }
+//        arguments[0] = 2;
+//        document.write(e);
+//        if(a){
+//            var b = 123;
+//            function c() {
+//            }
+//        }
+//        var c;
+//        a = 10;
+//        var a;
+//        document.write(b);
+//        f = 123;
+//        document.write(c);
+//        document.write(a);
+//    }
+//    var a;
+//    demo(1);
+//    document.write(a);
+//    document.write(f);
+
+
+    //类型转换练习
+//    var str = false + 1;
+//    document.write(str);
+//    var demo = false == 1;
+//    document.write(demo);
+//    if(typeof (a)&&-true + (+undefined) + ""){
+//        document.write('基础扎实');
+//    }
+//    if(11 + "11" * 2 == 33){
+//        document.write('基础扎实');
+//    }
+//    !!" " + !!"" - !!false||document.write('你觉得能打印，你就是猪！');
+
+
+    //WeChat笔试题
+    // var x = 1;
+    // var f = function () {
+    //
+    // };
+    // if(function f() {})
+    // {
+    //     x += typeof(f);
+    // }
+    // console.log(x);
+
+
+//    //百度外卖笔试题
+//    (window.foo || (window.foo = 'bar'));
+//    //请回答window.foo的值。一定要注意先读括号
+
+
+</script>
+</body>
+</html>

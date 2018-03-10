@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js/vue.js"></script>
+</head>
+<body>
+    <!-- Vue 包含一组观察数组的变异方法，所以它们也将会触发视图更新。这些方法如下： 
+     push() pop() shift() unshift() splice() sort() reverse() -->
+    <!-- 调用方法例如：example1.items.push({ message: 'Baz' }) -->
+
+    <!-- 变异方法 (mutation method)，顾名思义，会改变被这些方法调用的原始数组。
+    相比之下，也有非变异 (non-mutating method) 方法，例如：filter(), concat() 和 slice() 。
+    这些不会改变原始数组，但总是返回一个新数组。当使用非变异方法时，可以用新数组替换旧数组：
+    example1.items = example1.items.filter(function (item) { return item.message.match(/Foo/) }) -->
+    
+    <!-- 有时，我们想要显示一个数组的过滤或排序副本，而不实际改变或重置原始数据。
+    在这种情况下，可以创建返回过滤或排序数组的计算属性。 -->
+    <div id="app">
+        <li v-for='n in evenNumbers'>
+            {{n}}
+        </li>
+    </div>
+
+</body>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                numbers: [
+                    1,2,3,4,5,6
+                ]
+            },
+            computed: {
+                evenNumbers: function(){
+                    return this.numbers.filter(function(number){
+                        return number%2 == 0;
+                    })
+                }
+            }
+        })
+    
+    </script>
+</html>

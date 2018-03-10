@@ -1,0 +1,60 @@
+<html>
+    <head></head>
+    <title></title>
+
+    <body>
+        <script> 
+        //     let [a,b,c] = [12,5,1];
+        //    console.log(a,b,c);.
+
+        // let {name,age,work} = {
+        //     name : "wy",
+        //     age : "18",
+        //     work : "codding"
+        // }
+
+        // console.log(name,age,work);
+
+        //可以起别名
+        // let { name, age, work : job} = {
+        //     name: "wy",
+        //     age: "18",
+        //     work: "codding"
+        // }
+
+        // console.log(name, age, job);
+        
+        //可以给默认值
+        // let { name, age, job = 'coder'} = {
+        //     name: "wy",
+        //     age: "18",
+            
+        // }
+
+        // console.log(name, age, job);
+    
+        //用于交换位置
+        // let a = 10,b = 5;
+        // [a,b] = [b,a];
+        // console.log(a,b);
+
+
+        //用于函数传参
+        function show({a,age}){
+            console.log(a,age);
+        }
+
+        show({
+            a : "xiaofeng",
+            age : "26"
+        })
+
+
+
+        </script>
+
+
+        
+
+    </body>
+</html>

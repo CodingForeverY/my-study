@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数的默认参数
+        // function show(a,b){//传统方法是需要加一层判断的，来看传入的值是否是undefined
+        //     a = a || 'hey';
+        //     b = b || 'girl';
+        //     console.log(a,b);
+        // }
+        // show('hello','world');
+    
+        // function show(a = 'how ', b = 'are you') {//新的方法就是在传参的时候赋值默认值即可
+        //     console.log(a, b);
+        // }
+        // show(undefined, 'world');
+        // show();
+
+        //函数的参数默认是已经定义过的，所以在函数内部是不可以重复定义的，会报错
+    
+        //...还可以用于函数参数中，叫做剩余运算符
+        // function show(a,b,...c){
+        //     console.log(a,b);
+        //     console.log(c);
+        // }
+        // show(1,2,3,4,5);
+
+        //还可以拓展作为本地映射
+        // let arr = [1,2,3,4,5];
+        // let arr1 = [...arr];
+        // let arr2 = Array.from(arr);
+        // console.log(arr);
+        // console.log(arr1);
+        // console.log(arr2);
+
+        let json = {
+            "0" : "1",
+            "1" : "2",
+            "2" : "3",
+            "push" : Array.prototype.push,
+            "splice" : Array.prototype.splice,
+            "length" : 3
+        }
+
+        let jsons = Array.from(json);
+        console.log(jsons);
+
+    </script>
+</body>
+</html>

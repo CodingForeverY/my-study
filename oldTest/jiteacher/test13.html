@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    var obj = {
+        name : 'abc',
+        age : 123,
+        card : ['visa','master'],
+        wife : {
+            name : 'bcd',
+            son : {
+                name : 'aaa'
+            }
+        }
+    }
+
+    var obj1 = {
+
+    }
+
+
+
+    //深度克隆
+    //先遍历对象 for(var prop in obj)
+    //1.判断是不是原始值  typeof() object
+    //2.判断是数组还是对象  instanceof  toString constructor
+    //3.建立相应的数组或对象
+    //递归
+
+    function deepClone(origin,target) {
+
+        var target = target || {},//如果target是一个对象就是他本身，如果不是就赋一个空对象给他
+            toStr = Object.prototype.toString,
+            arrStr = "[Object Array]";
+
+        for(var prop in origin){
+            if(origin.hasOwnProperty(prop)){  //为了避免拿它原型链上的属性进行克隆
+
+                if(origin[prop] !== 'null' && typeof (origin[prop]) == 'object'){ //如果是引用值就要进行判断是数组还是对象
+
+                    if(toStr.call(origin[prop]) == arrStr){ //如果是数组
+                        target[prop] = [];
+                    }else { //如果是对象
+                        target[prop] = {};
+                    }
+
+                    deepClone(origin[prop],target[prop]);  //递归，出口就是原始值
+
+                }else { //如果是原始值就可以直接进行克隆
+                        target[prop] = origin[prop];
+                }
+
+
+
+            }
+        }
+        return target;
+    }
+
+
+    //浅层克隆
+    // function clone(origin,target) {
+    //     var target = target || {};
+    //     for(var prop in origin){
+    //         target[prop] = origin[prop];
+    //     }
+    //     return target;
+    // }
+
+
+
+</script>
+</html>

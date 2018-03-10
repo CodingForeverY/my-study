@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let str = "apple banana pear";
+        // console.log(str.includes('banana')); //这是ES6新加的语法，找到了就返回true，与indexOf返回位置不同
+    
+        //利用includes判断浏览器
+        // if(navigator.userAgent.includes('Chrome')){
+        //     console.log("是chrome");
+        // }else{
+        //     console.log("不是chrome");
+        // }
+
+        //检测是否以某个字符串开头，新加的startsWith，会返回true或者false
+        // let str = "hello world";
+        // console.log(str.startsWith('hello'));
+
+        //检测是否以某个字符串结尾，新加的endsWith，会返回true或者false
+            // let str = "hello world";
+            // console.log(str.endsWith('world'));
+
+        //填充字符串,往前填充就用padStart，往后就用padEnd
+        let str = "wy";
+        let padStr = "love";
+
+        console.log(str.padStart(str.length+padStr.length,padStr));
+    </script>
+</body>
+</html>

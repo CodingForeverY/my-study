@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js/vue.js"></script>
+</head>
+<body>
+    <!-- ES5的对象原型有两个新的属性__defineGetter__和__defineSetter__，专门用来给对象绑定get和set。可以这样书写：
+    var Coder = function() {
+    }
+    Coder.prototype.__defineGetter__('name', function() {
+        if (this.name) {
+            return this.name
+        }else{
+            return '你还没有取名'
+        }
+    })
+    Coder.prototype.__defineSetter__('name', function(val) {
+        this.name = val
+    })
+    var isMe = new Coder()
+    console.log(isMe.name)
+    isMe.name = '周神'
+    console.log(isMe.name)
+    console.log(isMe) -->
+
+
+    <script>
+        let Coder = function () {
+            let that = this;
+            return{
+                get name(){
+                    if(that.name){
+                        return that.name;
+                    }
+                    console.log('您还未设置姓名呢');
+                },
+                set name(val){
+                    console.log('你把姓名修改成了'+val);
+                    that.name = val;
+                }
+            }
+        }
+
+        let corder = new Coder();
+        console.log(corder.name);
+        corder.name = 'wy';
+        console.log(corder.name);
+        console.log(corder);
+    
+    </script>
+</body>
+</html>

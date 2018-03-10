@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js/vue.js"></script>
+</head>
+<body>
+    <!-- <div id="app6" class="static" v-bind:class="classObject">
+    </div> -->
+
+    <!-- <div id="app6" class="static" v-bind:class='[activeClass,erroeClass]'>
+    </div> -->
+
+    <!-- 如果你也想根据条件切换列表中的 class，可以用三元表达式： -->
+    <div v-bind:class='[isActive ? activeClass : '',errorClass]'></div>
+</body>
+    <script>
+        // let app = new Vue ({
+        //    el : "#app6",
+        //    data : {
+        //        classObject : {
+        //            active : true,
+        //            'text-danger' : false
+        //        }
+        //    } 
+        // });
+
+        //我们也可以在这里绑定一个返回对象的计算属性。这是一个常用且强大的模式：
+        // let app = new Vue({
+        //     el: "#app6",
+        //     data: {
+        //         isActive:true,
+        //         error:null
+        //     },
+        //     computed: {
+        //         classObject: function(){
+        //             return {
+        //                 active: this.isActive && !this.error,
+        //                 'text-danger': this.error && this.error.type === 'fatal'
+        //             }
+        //         }
+        //     }
+        // })
+
+        //数组语法
+        //我们可以把一个数组传给 v - bind: class ，以应用一个 class 列表：
+        let app = new Vue({
+            el: '#app6',
+            data: {
+                activeClass: 'active',
+                erroeClass: 'text-danger'
+            }
+        })
+    
+    
+    </script>
+
+    
+</html>
