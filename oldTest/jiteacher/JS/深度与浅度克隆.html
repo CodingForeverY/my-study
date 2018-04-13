@@ -43,9 +43,9 @@
         for(var prop in origin){
             if(origin.hasOwnProperty(prop)){  //为了避免拿它原型链上的属性进行克隆
 
-                if(origin[prop] !== 'null' && typeof (origin[prop]) == 'object'){ //如果是引用值就要进行判断是数组还是对象
-
-                    if(toStr.call(origin[prop]) == arrStr){ //如果是数组
+                if(origin[prop] !== 'null' && typeof (origin[prop]) === 'object'){ //如果是引用值就要进行判断是数组还是对象
+                    // if(origin[prop] instanceof Array){ //如果是数组
+                    if(toStr.call(origin[prop]) === arrStr){ //如果是数组
                         target[prop] = [];
                     }else { //如果是对象
                         target[prop] = {};
@@ -63,6 +63,10 @@
         }
         return target;
     }
+
+    deepClone(obj,obj1)
+    console.log(obj)
+    console.log(obj1)
 
 
     //浅层克隆
